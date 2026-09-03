@@ -1,0 +1,5 @@
+
+# Backend secrets and Python cache
+backend/.env
+backend/__pycache__/
+
