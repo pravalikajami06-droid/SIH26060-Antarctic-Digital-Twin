@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>POLAR | Antarctic Digital Twin</title>
+
+    <!-- Leaflet Map -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         APPLICATION
+    ========================== -->
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">❄</div>
+
+                <div>
+                    <h1>POLAR</h1>
+                    <span>ANTARCTIC INTELLIGENCE</span>
+                </div>
+            </div>
+
+            <nav class="navigation">
+
+                <a href="#" class="nav-item active">
+                    <span>⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>◉</span>
+                    <span>Digital Twin</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>◎</span>
+                    <span>Environment</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>⌖</span>
+                    <span>Stations</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>◈</span>
+                    <span>Predictions</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>✦</span>
+                    <span>AI Insights</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>System Online</strong>
+                        <small>All systems operational</small>
+                    </div>
+                </div>
+
+                <div class="version">
+                    POLAR v1.0
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">ANTARCTIC MONITORING SYSTEM</p>
+                    <h2>Digital Twin Command Center</h2>
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="live-indicator">
+                        <span class="status-dot"></span>
+                        LIVE DATA
+                    </div>
+
+                    <div class="time-display" id="current-time">
+                        --:--:--
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 KPI CARDS
+            ========================== -->
+
+            <section class="kpi-grid">
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+                        <span>Temperature</span>
+                        <span class="kpi-icon">🌡</span>
+                    </div>
+
+                    <div class="kpi-value">
+                        <span id="temperature">-18.4</span>°C
+                    </div>
+
+                    <div class="kpi-footer">
+                        <span class="positive">↓ 2.1°C</span>
+                        <span>vs yesterday</span>
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+                        <span>Wind Speed</span>
+                        <span class="kpi-icon">≋</span>
+                    </div>
+
+                    <div class="kpi-value">
+                        <span id="wind-speed">32</span>
+                        <small>km/h</small>
+                    </div>
+
+                    <div class="kpi-footer">
+                        <span>Direction</span>
+                        <span>NE</span>
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+                        <span>Ice Coverage</span>
+                        <span class="kpi-icon">❄</span>
+                    </div>
+
+                    <div class="kpi-value">
+                        <span id="ice-coverage">82.4</span>%
+                    </div>
+
+                    <div class="kpi-footer">
+                        <span class="positive">+0.8%</span>
+                        <span>this week</span>
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+                        <span>Active Stations</span>
+                        <span class="kpi-icon">⌖</span>
+                    </div>
+
+                    <div class="kpi-value">
+                        <span id="stations">24</span>
+                    </div>
+
+                    <div class="kpi-footer">
+                        <span class="positive">● Operational</span>
+                        <span>stations</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 DIGITAL TWIN + MAP
+            ========================== -->
+
+            <section class="main-grid">
+
+                <!-- DIGITAL TWIN -->
+                <div class="panel digital-twin-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="panel-label">SIMULATION</p>
+                            <h3>Antarctic Digital Twin</h3>
+                        </div>
+
+                        <button class="panel-button" id="reset-view">
+                            Reset View
+                        </button>
+
+                    </div>
+
+                    <div id="digital-twin">
+
+                        <div class="twin-placeholder">
+
+                            <div class="ice-glow"></div>
+
+                            <div class="antarctica-shape">
+                                ❄
+                            </div>
+
+                            <h4>3D DIGITAL TWIN</h4>
+
+                            <p>
+                                Interactive Antarctic terrain simulation
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MAP -->
+                <div class="panel map-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="panel-label">GEOSPATIAL</p>
+                            <h3>Station Network</h3>
+                        </div>
+
+                        <span class="live-badge">
+                            LIVE
+                        </span>
+
+                    </div>
+
+                    <div id="antarctic-map"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 LOWER ANALYTICS
+            ========================== -->
+
+            <section class="analytics-grid">
+
+                <!-- ENVIRONMENT CHART -->
+                <div class="panel chart-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="panel-label">ENVIRONMENT</p>
+                            <h3>Temperature Trend</h3>
+                        </div>
+
+                        <select id="time-range">
+                            <option value="24">24 Hours</option>
+                            <option value="7">7 Days</option>
+                            <option value="30">30 Days</option>
+                        </select>
+
+                    </div>
+
+                    <div id="temperature-chart"></div>
+
+                </div>
+
+
+                <!-- AI INSIGHTS -->
+                <div class="panel insights-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="panel-label">ARTIFICIAL INTELLIGENCE</p>
+                            <h3>AI Insights</h3>
+                        </div>
+
+                        <span class="ai-badge">
+                            AI
+                        </span>
+
+                    </div>
+
+                    <div class="insight-list">
+
+                        <div class="insight">
+
+                            <div class="insight-icon warning">
+                                ⚠
+                            </div>
+
+                            <div>
+                                <strong>Temperature anomaly detected</strong>
+                                <p>
+                                    Regional temperature is
+                                    2.1°C below the seasonal baseline.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight">
+
+                            <div class="insight-icon normal">
+                                ✓
+                            </div>
+
+                            <div>
+                                <strong>Station network stable</strong>
+                                <p>
+                                    All monitored stations are
+                                    transmitting normally.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight">
+
+                            <div class="insight-icon info">
+                                ◈
+                            </div>
+
+                            <div>
+                                <strong>Ice coverage projection</strong>
+                                <p>
+                                    Current models indicate stable
+                                    coverage over the next 7 days.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT LIBRARIES
+    ========================== -->
+
+    <!-- Leaflet -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <!-- Plotly -->
+    <script
+        src="https://cdn.plot.ly/plotly-2.35.2.min.js">
+    </script>
+
+
+   <!-- Application Scripts -->
+
+<script src="js/api.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
+<script src="js/digital-twin.js"></script>
+
+</body>
+</html>
