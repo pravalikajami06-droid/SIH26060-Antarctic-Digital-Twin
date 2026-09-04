@@ -1,0 +1,91 @@
+{
+  "Bharati": {
+    "station_id": "Bharati",
+    "timestamp": "2026-08-27 23:00:00",
+    "risk_score": 40.5,
+    "risk_level": "MEDIUM",
+    "risk_components": {
+      "environmental_risk": 15.0,
+      "energy_risk": 35.0,
+      "anomaly_risk": 0,
+      "resource_risk": 90.0
+    },
+    "environment": {
+      "temperature_c": -24.96,
+      "wind_speed_kmh": 16.34
+    },
+    "energy": {
+      "current_energy_kwh": 228.11,
+      "average_forecast_kwh": 230.47,
+      "forecast_change_percent": 1.03
+    },
+    "resources": {
+      "fuel_days_remaining": 0.0,
+      "water_days_remaining": 0.0,
+      "food_days_remaining": 0.0,
+      "limiting_resource": "fuel"
+    },
+    "anomaly": {
+      "average_score": 0.0,
+      "highest_score": 0.0,
+      "warning_records": 0,
+      "anomaly_records": 0
+    },
+    "decision": {
+      "recommendations": [
+        "Prioritize fuel resource management"
+      ],
+      "risk_drivers": [
+        "Low temperature may increase energy demand",
+        "High dependency on generator power",
+        "Critical resource shortage predicted",
+        "Limiting resource: fuel"
+      ]
+    }
+  },
+  "Maitri": {
+    "station_id": "Maitri",
+    "timestamp": "2026-08-27 23:00:00",
+    "risk_score": 43.5,
+    "risk_level": "MEDIUM",
+    "risk_components": {
+      "environmental_risk": 30.0,
+      "energy_risk": 35.0,
+      "anomaly_risk": 0,
+      "resource_risk": 90.0
+    },
+    "environment": {
+      "temperature_c": -31.22,
+      "wind_speed_kmh": 14.91
+    },
+    "energy": {
+      "current_energy_kwh": 230.04,
+      "average_forecast_kwh": 239.74,
+      "forecast_change_percent": 4.22
+    },
+    "resources": {
+      "fuel_days_remaining": 0.0,
+      "water_days_remaining": 0.0,
+      "food_days_remaining": 0.0,
+      "limiting_resource": "fuel"
+    },
+    "anomaly": {
+      "average_score": 0.0,
+      "highest_score": 0.0,
+      "warning_records": 2028,
+      "anomaly_records": 0
+    },
+    "decision": {
+      "recommendations": [
+        "Prioritize fuel resource management"
+      ],
+      "risk_drivers": [
+        "Extreme cold may increase heating demand",
+        "High dependency on generator power",
+        "2028 warning records detected",
+        "Critical resource shortage predicted",
+        "Limiting resource: fuel"
+      ]
+    }
+  }
+}

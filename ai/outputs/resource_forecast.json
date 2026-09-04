@@ -1,0 +1,70 @@
+{
+  "Bharati": {
+    "station_id": "Bharati",
+    "timestamp": "2026-08-27 23:00:00",
+    "current_resources": {
+      "fuel_level_liters": 0.0,
+      "water_level_liters": 0.0,
+      "food_stock_kg": 0.0,
+      "battery_level_percent": 67.04
+    },
+    "daily_consumption": {
+      "fuel_liters_per_day": 417.25,
+      "water_liters_per_day": 688.54,
+      "food_kg_per_day": 123.1
+    },
+    "estimated_days_remaining": {
+      "fuel": 0.0,
+      "water": 0.0,
+      "food": 0.0
+    },
+    "resource_risk": {
+      "fuel": "CRITICAL",
+      "water": "CRITICAL",
+      "food": "CRITICAL",
+      "battery": "LOW",
+      "overall": "CRITICAL"
+    },
+    "limiting_resource": "fuel",
+    "minimum_resource_days": 0.0,
+    "recommendations": [
+      "Prioritize fuel resupply and reduce generator dependency",
+      "Prioritize water conservation and resupply",
+      "Prioritize food resupply and review consumption"
+    ]
+  },
+  "Maitri": {
+    "station_id": "Maitri",
+    "timestamp": "2026-08-27 23:00:00",
+    "current_resources": {
+      "fuel_level_liters": 0.0,
+      "water_level_liters": 0.0,
+      "food_stock_kg": 0.0,
+      "battery_level_percent": 71.23
+    },
+    "daily_consumption": {
+      "fuel_liters_per_day": 480.4,
+      "water_liters_per_day": 594.48,
+      "food_kg_per_day": 106.2
+    },
+    "estimated_days_remaining": {
+      "fuel": 0.0,
+      "water": 0.0,
+      "food": 0.0
+    },
+    "resource_risk": {
+      "fuel": "CRITICAL",
+      "water": "CRITICAL",
+      "food": "CRITICAL",
+      "battery": "LOW",
+      "overall": "CRITICAL"
+    },
+    "limiting_resource": "fuel",
+    "minimum_resource_days": 0.0,
+    "recommendations": [
+      "Prioritize fuel resupply and reduce generator dependency",
+      "Prioritize water conservation and resupply",
+      "Prioritize food resupply and review consumption"
+    ]
+  }
+}

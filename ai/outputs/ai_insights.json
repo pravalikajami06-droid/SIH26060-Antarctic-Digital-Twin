@@ -1,0 +1,65 @@
+{
+    "project": "POLAR - Antarctic Digital Twin",
+    "module": "AI + Data Intelligence",
+    "data_type": "Synthetic operational data",
+    "stations": {
+        "Bharati": {
+            "station_id": "Bharati",
+            "energy_forecast": {
+                "prediction_24h": null
+            },
+            "anomaly_detection": {
+                "anomaly_score": 0,
+                "warning_count": 0,
+                "anomaly_count": 0
+            },
+            "resource_forecast": {
+                "fuel_remaining_days": 0,
+                "water_remaining_days": 0,
+                "food_remaining_days": 0,
+                "limiting_resource": "fuel",
+                "resource_risk": {
+                    "fuel": "CRITICAL",
+                    "water": "CRITICAL",
+                    "food": "CRITICAL",
+                    "battery": "LOW",
+                    "overall": "CRITICAL"
+                }
+            },
+            "risk_assessment": {
+                "risk_score": 40.5,
+                "risk_level": "MEDIUM",
+                "recommendation": "Monitor energy demand and resource levels."
+            }
+        },
+        "Maitri": {
+            "station_id": "Maitri",
+            "energy_forecast": {
+                "prediction_24h": null
+            },
+            "anomaly_detection": {
+                "anomaly_score": 0,
+                "warning_count": 2028,
+                "anomaly_count": 0
+            },
+            "resource_forecast": {
+                "fuel_remaining_days": 0,
+                "water_remaining_days": 0,
+                "food_remaining_days": 0,
+                "limiting_resource": "fuel",
+                "resource_risk": {
+                    "fuel": "CRITICAL",
+                    "water": "CRITICAL",
+                    "food": "CRITICAL",
+                    "battery": "LOW",
+                    "overall": "CRITICAL"
+                }
+            },
+            "risk_assessment": {
+                "risk_score": 43.5,
+                "risk_level": "MEDIUM",
+                "recommendation": "Monitor energy demand and resource levels."
+            }
+        }
+    }
+}
